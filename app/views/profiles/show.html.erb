@@ -1,0 +1,14 @@
+<% for possible_friend in @profile.possible_friends %>
+	<%= form_tag friendships_path do %>
+	  <%= hidden_field_tag 'friend_id', possible_friend.id %>
+		<%= submit_tag "Add" %>
+		<span> <%= "#{possible_friend.name} as a Friend" %></span>
+	<% end %>
+<% end %>
+
+
+Friends:
+<ul>
+<% for friend in @profile.friends %>
+ <li><%= friend.name %></li>
+<% end %>
