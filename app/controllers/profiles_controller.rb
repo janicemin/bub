@@ -1,15 +1,24 @@
 class ProfilesController < ApplicationController
-	before_action :authenticate_user!
+	# before_action :check_profile_presence, only: [:new, :create]
 
 	def show
 		@user = current_user
-		@profile = current_user.profile
-		@friends = current_profile.friends
+		if current_user.profile
+			@profile = current_user.profile
+			@friends = current_profile.friends
+		else
+			redirect_to new_profile_path
+		end
 	end
 
 	def new 
-		@user = current_user
-		@profile = Profile.new
+
+		 if current_user.profile
+			redirect_to root_url
+		else
+			@user = current_user
+			@profile = Profile.new
+		end
 	end
 
 	def create
@@ -38,4 +47,13 @@ class ProfilesController < ApplicationController
 		def profile_params
 			params.require(:profile).permit(:name, :age, :location, :phone_number, :email)
 		end
+
+		# def check_profile_presence
+		# 	if Profile.where(user_id: current_user.id).exists?
+		# 	# if current_user.profile.exists?
+		# 		redirect_to profile_path(current_user) 
+		# 	else
+		# 		redirect_to root_url
+		# 	end
+		# end
 end

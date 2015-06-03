@@ -6,7 +6,7 @@ class CreateProfiles < ActiveRecord::Migration
     	t.string :location
     	t.string :phone_number
     	t.string :email
-    	t.string :friend
+    	t.string :friends
     end
   end
 end
