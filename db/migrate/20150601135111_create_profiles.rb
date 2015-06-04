@@ -6,6 +6,7 @@ class CreateProfiles < ActiveRecord::Migration
     	t.string :location
     	t.string :phone_number
     	t.string :email
+    	t.integer :zipcode
     end
   end
 end

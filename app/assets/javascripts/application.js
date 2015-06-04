@@ -17,18 +17,18 @@
 
  
 
-$.ajax({
-           type: 'GET',
-           dataType: 'jsonp',
-           jsonp: 'callback',
-           url: 'https://api.meetup.com/find/groups?photo-host=public&zip=21202&page=20&country=usa&sig_id=188185019&sig=d9f44a2c374e46c96fe2447861de68aa7750ec29'
-               }).done(function(response){
-               		for (i = 0; i < response["data"].length; i++){
-               				console.log(response["data"][i])
-               				console.log(response["data"][i]["name"])
-               				$(".name").append("<a href='" + response["data"][i]["link"] + "'>"  + response["data"][i]["name"] + "</a>")
+// $.ajax({
+//            type: 'GET',
+//            dataType: 'jsonp',
+//            jsonp: 'callback',
+//            url: 'https://api.meetup.com/find/groups?photo-host=public&zip=' + <%@profile.zipcode%> + '&page=20&country=usa&sig_id=188185019&sig=d9f44a2c374e46c96fe2447861de68aa7750ec29'
+//                }).done(function(response){
+//                		for (i = 0; i < response["data"].length; i++){
+//                				console.log(response["data"][i])
+//                				console.log(response["data"][i]["name"])
+//                				$(".name").append("<a href='" + response["data"][i]["link"] + "'>"  + response["data"][i]["name"] + "</a>")
 
-               				  								 // <a href="http://www.w3schools.com">Visit W3Schools</a>
-               		}
-               })
-              
+//                				  								 // <a href="http://www.w3schools.com">Visit W3Schools</a>
+//                		}
+//                })
+//               

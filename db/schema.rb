@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20150603025241) do
     t.string  "location"
     t.string  "phone_number"
     t.string  "email"
+    t.integer "zipcode"
     t.integer "user_id"
   end
 
