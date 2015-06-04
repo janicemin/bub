@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
         	<%= "Welcome, #{current_user.name}." %>
-          <li><%= link_to 'Create a Profile', new_profile_path %></li>
+          <li><%= link_to 'Your Profile', new_profile_path %></li>
           <li><%= link_to 'Message a Friend', conversations_path %></li>
           <li><%= link_to 'Log Out and Stay Strong', destroy_user_session_path, method: :delete %></li>
         <% else %>
