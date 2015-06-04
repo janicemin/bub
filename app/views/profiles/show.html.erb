@@ -1,17 +1,13 @@
 <div class = "profile-section"/>
 <h2> Hey there, <%=@profile.name%>! <br>
-		<h2> You're sooooooo good looking! <%=@profile.picture%> <h2>
+		<h2> You're sooooooo good looking! <h2>
 		<h2>Age: <%=@profile.age %> <br></h2>
 		<h2>Location: <%=@profile.location %><h2>
 		<h2>Phone Number: <%=@profile.phone_number%><h2>
 		<h2>Zip Code: <%=@profile.zipcode%><h2>
 
 	<h2> Here's an idea -- instead of calling your ex, try some of these activities in the area!<h2>
-		<h2 class="name"></h2>
-	
-</div>
-
-<script>
+		<script>
 
 $.ajax({
            type: 'GET',
@@ -28,6 +24,9 @@ $.ajax({
                		}
                })
              
+</script>
+	
+</div>
 
 
 <div class = "friendship-list"/>
