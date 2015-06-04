@@ -19,5 +19,23 @@ Friends:
 		<h2>Age: <%=@profile.age %> <br></h2>
 		<h2>Location: <%=@profile.location %><h2>
 		<h2>Phone Number: <%=@profile.phone_number%><h2>
+		<h2 class="name"></h2>
 	
 </div>
+
+
+
+<script>
+
+$.ajax({
+           type: 'GET',
+           dataType: 'jsonp',
+           jsonp: 'callback',
+           url: 'https://api.meetup.com/find/groups?photo-host=public&zip=21202&page=20&country=usa&sig_id=188185019&sig=d9f44a2c374e46c96fe2447861de68aa7750ec29'
+               }).done(function(response){
+               		for(i = 0; i < response.length; i++){
+               				response["data"][0]
+               		}
+               });
+
+</script>
