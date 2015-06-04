@@ -27,14 +27,35 @@ $.ajax({
            
                		}
                })
-             
+              
+
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var picture = new FileReader();
+
+      picture.onload = function (e) {
+        $('#img_prev')
+          .attr('src', e.target.result)
+          .width(150)
+          .height(200);
+      };
+
+      picture.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
+
+<input type='file' onchange="readURL(this);" />
+  <img id="img_prev" src="#" alt="your image" />
+
 
 
 <div class = "friendship-list"/>
 <h2>Make Some Friends, <%=@profile.name%> ! <h2>
 <ul>
 <% for friend in @profile.friends %>
- <li><%= friend.name %></li>
+ <li><%= link_to friend.name, friendship_path(friend.id) %></li>
 <% end %>
 </div>
 <div class = "add-friend"/>

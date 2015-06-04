@@ -1,5 +1,10 @@
 class FriendshipsController < ApplicationController
 
+	def show
+		@profile = current_user.profile
+		@friend = @profile.friendships.name
+	end
+
 	def create 
 		@friendship = current_profile.friendships.build(:friend_id => params[:friend_id])
 		if @friendship.save
