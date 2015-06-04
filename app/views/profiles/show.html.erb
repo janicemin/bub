@@ -7,13 +7,6 @@
 <% end %>
 
 
-Friends:
-<ul>
-<% for friend in @profile.friends %>
- <li><%= friend.name %></li>
-<% end %>
-
-
 <div class = "profile-section"/>
 <h2> Hey there, <%=@profile.name%>! <br>
 		<h2>Age: <%=@profile.age %> <br></h2>
@@ -24,18 +17,14 @@ Friends:
 </div>
 
 
+<div class = "friendship-list"/>
+<h2>Make Some Friends <%=@profile.name%> <h2>
+<ul>
+<% for friend in @profile.friends %>
+ <li><%= friend.name %></li>
+<% end %>
+</div>
 
-<script>
 
-$.ajax({
-           type: 'GET',
-           dataType: 'jsonp',
-           jsonp: 'callback',
-           url: 'https://api.meetup.com/find/groups?photo-host=public&zip=21202&page=20&country=usa&sig_id=188185019&sig=d9f44a2c374e46c96fe2447861de68aa7750ec29'
-               }).done(function(response){
-               		for(i = 0; i < response.length; i++){
-               				response["data"][0]
-               		}
-               });
 
-</script>
+
