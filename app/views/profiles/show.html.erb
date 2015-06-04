@@ -1,3 +1,4 @@
+<div class = "add-friend"/>
 <% for possible_friend in @profile.possible_friends %>
 	<%= form_tag friendships_path do %>
 	  <%= hidden_field_tag 'friend_id', possible_friend.id %>
@@ -5,6 +6,7 @@
 		<span> <%= "#{possible_friend.name} as a Friend" %></span>
 	<% end %>
 <% end %>
+</div>
 
 <div class = "profile-section"/>
 <h2> Hey there, <%=@profile.name%>! <br>
@@ -38,16 +40,16 @@ $.ajax({
 
   function readURL(input) {
     if (input.files && input.files[0]) {
-      var reader = new FileReader();
+      var picture = new FileReader();
 
-      reader.onload = function (e) {
+      picture.onload = function (e) {
         $('#img_prev')
           .attr('src', e.target.result)
           .width(150)
           .height(200);
       };
 
-      reader.readAsDataURL(input.files[0]);
+      picture.readAsDataURL(input.files[0]);
     }
   }
 </script>
