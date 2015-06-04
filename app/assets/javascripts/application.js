@@ -15,3 +15,9 @@
 //= require turbolinks
 //= require_tree .
 
+$.ajax({
+           type: 'GET',
+           dataType: 'jsonp',
+           jsonp: 'callback',
+           url: 'http://dev.markitondemand.com/Api/v2/Quote/jsonp?symbol=' + data[0].Symbol
+               }).done(function(data1){
