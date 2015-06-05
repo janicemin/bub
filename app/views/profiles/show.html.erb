@@ -6,8 +6,13 @@
 		<h2>Phone Number: <%=@profile.phone_number%><h2>
 		<h2>Zip Code: <%=@profile.zipcode%><h2>
 
-	<h2> Here's an idea -- instead of calling your ex, try some of these activities in the area!<h2>
-		<script>
+	<h2> Here's an idea -- instead of calling your ex, check out your activity cloud, get out there! <h2>
+		<h2 class="name"></h2>
+		
+	
+</div>
+
+<script>
 
 $.ajax({
            type: 'GET',
@@ -23,10 +28,9 @@ $.ajax({
            
                		}
                })
-             
+              
+
 </script>
-	
-</div>
 
 
 <div class = "friendship-list"/>
@@ -36,6 +40,7 @@ $.ajax({
  <li><%= friend.name %></li>
 <% end %>
 </div>
+
 <div class = "add-friend"/>
 <% for possible_friend in @profile.possible_friends %>
 	<%= form_tag friendships_path do %>
@@ -45,6 +50,10 @@ $.ajax({
 	<% end %>
 <% end %>
 </div>
+
+
+
+
 
 
 

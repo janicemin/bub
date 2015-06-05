@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-	# before_action :check_profile_presence, only: [:new, :create]
+
 
 	def show
 		@user = current_user
@@ -52,15 +52,8 @@ class ProfilesController < ApplicationController
 
 	private
 		def profile_params
-			params.require(:profile).permit(:name, :age, :location, :phone_number, :email)
+			params.require(:profile).permit(:name, :age, :location, :phone_number, :email, :zipcode)
 		end
 
-		# def check_profile_presence
-		# 	if Profile.where(user_id: current_user.id).exists?
-		# 	# if current_user.profile.exists?
-		# 		redirect_to profile_path(current_user) 
-		# 	else
-		# 		redirect_to root_url
-		# 	end
-		# end
+	
 end
