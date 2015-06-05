@@ -1,28 +1,10 @@
 == README
+For friendships, one has to sign in and log out and then sign in as another user for the app to recognize there are other users. That is probably confusing and something I would want to fix at a later time or at least provide some instruction on the app. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+It wasn't until around 10:10 PM on Thursday that I realized I needed Oauth authentication to allow users to have access to the API. I had just been using a key that had been issued to me as the developer. So that is something I will also have to fix in the future. 
 
-Things you may want to cover:
+I also wanted to add more styling, especially around the activity cloud and use an image of a cloud because I liked the jumble of activity links from the AJAX request. 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+There are things I definitely hope to finesse. 
+Thanks for stopping by.
+jm
